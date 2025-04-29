@@ -18,6 +18,7 @@ This project is a currency converter that consumes the [ExchangeRate API](https:
 - ✅ Check the exchange rate between two currencies (e.g., USD → BRL)
 - ✅ Save conversion data locally
 - ✅ List all saved conversions
+- ✅ Search specific records based on base currency and currecy target
 
 ---
 
@@ -94,6 +95,7 @@ Este projeto é um conversor de moedas que consome a [ExchangeRate API](https://
 - ✅ Consultar a taxa de câmbio entre duas moedas (ex: USD → BRL)
 - ✅ Salvar dados da conversão
 - ✅ Listar todas as conversões salvas
+- ✅ Buscar registros específicos com base na moeda base e na moeda alvo.
 
 ---
 
