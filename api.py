@@ -10,6 +10,7 @@ def converter():
     currency_base = input('Define currency base: ').strip().lower()
     currency_target = input('Define currency target: ').strip().lower()
     key = os.getenv('EXCHANGERATE_API_KEY')
+    
     if not key:
         print('Error: key not configured. Add the key in the .env file.')
         exit(1)
@@ -24,7 +25,7 @@ def converter():
         
         data = response.json()
 
-        if data['result'] != 'sucess':
+        if data['result'] != 'success':
             print(f'Conversion error: {data.get('error-type', 'unknown error')}')
             return
         

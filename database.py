@@ -65,3 +65,28 @@ def records_list():
     
     finally:
         conn.close()
+    
+
+def specific_query():
+    try:
+        conn, cursor = connect()
+        currency_base = input('Enter currency base: ').strip().upper()
+        currency_target = input('Enter currency target: ').strip().upper()
+        query = cursor.execute(
+            '''
+            SELECT * FROM exchange_rate
+            WHERE currency_base = ? AND currency_target = ? 
+            ''', (currency_base, currency_target)
+        )
+        results = query.fetchall()
+        
+        for r in results:
+            print(f"ID: {r[0]} | Currency Base: {r[1]} | Currency Target: {r[2]} | "
+                  f"Quotation: {r[3]} | Last Update: {r[4]}")
+
+    
+    except sqlite3.Error as error:
+        print(f"Error listing specific records: {error}")
+    
+    finally:
+        conn.close()
